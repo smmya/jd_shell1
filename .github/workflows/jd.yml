@@ -38,9 +38,6 @@ jobs:
           file: docker/v4.Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: 1554537386/jd:v4
-          build-args: |
-            JD_SHELL_KEY=${{ secrets.JD_SHELL_KEY }}
-            JD_SCRIPTS_KEY=${{ secrets.JD_SCRIPTS_KEY }}
       -
         name: 构建v4-bot镜像并推送
         id: docker_build_2
