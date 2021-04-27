@@ -3,7 +3,7 @@
 ## 文件路径、脚本网址
 dir_shell=$(dirname $(readlink -f "$0"))
 dir_root=$dir_shell
-url_shell=${JD_SHELL_URL:-https://github.com/gys619/jd_shell}
+url_shell=${JD_SHELL_URL:-git@jd_shell_gitee:evine/jd_shell.git}
 url_scripts=${JD_SCRIPTS_URL:-git@jd_scripts_gitee:lxk0301/jd_scripts.git}
 send_mark=$dir_shell/send_mark
 
@@ -61,7 +61,10 @@ reset_romote_url () {
 git_clone_scripts () {
     local url=$1
     local dir=$2
-    git clone master $url $dir
+    local branch=$3
+    [[ $branch ]] && local cmd="-b $branch "
+    echo -e "开始克隆仓库 $url 到 $dir\n"
+    git clone $cmd $url $dir
     exit_status=$?
 }
 
