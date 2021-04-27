@@ -35,9 +35,9 @@ jobs:
           pull: true
           push: true
           context: jd
-          file: jd/v4.unstable.Dockerfile
+          file: docker/v4.unstable.Dockerfile
           platforms: linux/amd64
-          tags: nevinee/jd:v4-unstable
+          tags: 1554537386/jd:v4-unstable
           build-args: |
             JD_SHELL_KEY=${{ secrets.JD_SHELL_KEY }}
             JD_SCRIPTS_KEY=${{ secrets.JD_SCRIPTS_KEY }}
@@ -49,6 +49,6 @@ jobs:
           pull: false
           push: true
           context: jd
-          file: jd/v4-bot.unstable.Dockerfile
+          file: 1554537386/v4-bot.unstable.Dockerfile
           platforms: linux/amd64
           tags: nevinee/jd:v4-bot-unstable
