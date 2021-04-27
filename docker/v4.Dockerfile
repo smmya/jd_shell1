@@ -1,9 +1,9 @@
 FROM node:lts-alpine
-ARG REPO=gitee
+ARG REPO=gihub
 ARG REPO_URL=$REPO.com
 ARG JD_SHELL=jd_shell
 ARG JD_SHELL_BRANCH=master
-ARG JD_SHELL_HOST=jd_shell_$REPO
+ARG JD_SHELL_HOST=$REPO_URL
 ARG JD_SHELL_KEY="NEED_REPLACE"
 ARG JD_SCRIPTS=jd_scripts
 ARG JD_SCRIPTS_BRANCH=master
@@ -16,7 +16,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     JD_DIR=/jd \
     ENABLE_HANGUP=false \
     ENABLE_RESET_REPO_URL=true \
-    JD_SHELL_URL=git@$JD_SHELL_HOST:evine/$JD_SHELL.git \
+    JD_SHELL_URL=https://$JD_SHELL_HOST/gys619/$JD_SHELL \
     JD_SCRIPTS_URL=git@$JD_SCRIPTS_HOST:lxk0301/$JD_SCRIPTS.git
 WORKDIR $JD_DIR
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
