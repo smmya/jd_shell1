@@ -61,10 +61,7 @@ reset_romote_url () {
 git_clone_scripts () {
     local url=$1
     local dir=$2
-    local branch=master
-    [[ $branch ]] && local cmd="-b $branch "
-    echo -e "开始克隆仓库 $url 到 $dir\n"
-    git clone $cmd $url $dir
+    git clone master $url $dir
     exit_status=$?
 }
 
