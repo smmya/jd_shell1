@@ -4,7 +4,7 @@ ARG REPO_URL=$REPO.com
 ARG JD_SHELL=jd_shell
 ARG JD_SHELL_BRANCH=master
 ARG JD_SHELL_HOST=$REPO_URL
-ARG JD_SHELL_KEY="NEED_REPLACE"
+#ARG JD_SHELL_KEY="NEED_REPLACE"
 ARG JD_SCRIPTS=jd_scripts
 ARG JD_SCRIPTS_BRANCH=master
 ARG JD_SCRIPTS_HOST=jd_scripts_$REPO
@@ -36,7 +36,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && mkdir -p /root/.ssh \
-    && echo $JD_SHELL_KEY | perl -pe "{s|_| |g; s|@|\n|g}" > /root/.ssh/$JD_SHELL \
+    ##&& echo $JD_SHELL_KEY | perl -pe "{s|_| |g; s|@|\n|g}" > /root/.ssh/$JD_SHELL \
     && echo $JD_SCRIPTS_KEY | perl -pe "{s|_| |g; s|@|\n|g}" > /root/.ssh/$JD_SCRIPTS \
     && chmod 600 /root/.ssh/$JD_SHELL /root/.ssh/$JD_SCRIPTS \
     && echo -e "Host $JD_SHELL_HOST\n\tHostname $REPO_URL\n\tIdentityFile=/root/.ssh/$JD_SHELL\n\nHost $JD_SCRIPTS_HOST\n\tHostname $REPO_URL\n\tIdentityFile=/root/.ssh/$JD_SCRIPTS" > /root/.ssh/config \
