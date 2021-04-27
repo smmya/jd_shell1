@@ -37,7 +37,7 @@ jobs:
           context: jd
           file: jd/v4.Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          tags: nevinee/jd:v4
+          tags: 1554537386/jd:v4
           build-args: |
             JD_SHELL_KEY=${{ secrets.JD_SHELL_KEY }}
             JD_SCRIPTS_KEY=${{ secrets.JD_SCRIPTS_KEY }}
@@ -51,4 +51,4 @@ jobs:
           context: jd
           file: jd/v4-bot.Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          tags: nevinee/jd:v4-bot
+          tags: 1554537386/jd:v4-bot
