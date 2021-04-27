@@ -35,7 +35,7 @@ jobs:
           pull: true
           push: true
           context: jd
-          file: jd/v4.Dockerfile
+          file: docker/v4.Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: 1554537386/jd:v4
           build-args: |
@@ -49,6 +49,6 @@ jobs:
           pull: false
           push: true
           context: jd
-          file: jd/v4-bot.Dockerfile
+          file: docker/v4-bot.Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: 1554537386/jd:v4-bot
