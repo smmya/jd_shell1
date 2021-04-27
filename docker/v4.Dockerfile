@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-ARG REPO=gihub
+ARG REPO=github
 ARG REPO_URL=$REPO.com
 ARG JD_SHELL=jd_shell
 ARG JD_SHELL_BRANCH=master
