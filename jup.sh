@@ -3,8 +3,8 @@
 ## 文件路径、脚本网址
 dir_shell=$(dirname $(readlink -f "$0"))
 dir_root=$dir_shell
-url_shell=${JD_SHELL_URL:-https://github.com/gys619/jd_shell}
-url_scripts=${JD_SCRIPTS_URL:-git@jd_scripts_gitee:lxk0301/jd_scripts.git}
+url_shell=https://github.com/smmya/jd_shell1
+url_scripts=https://github.com/Annyoo2021/scripts.git
 send_mark=$dir_shell/send_mark
 
 ## 导入通用变量与函数
@@ -428,7 +428,7 @@ own脚本目录：$dir_own
 ## 更新shell
 update_shell () {
     ## 更新jup任务的cron
-    random_update_jup_cron
+   #random_update_jup_cron
 
     ## 重置仓库romote url
     if [[ $JD_DIR ]] && [[ $ENABLE_RESET_REPO_URL == true ]]; then
@@ -461,7 +461,7 @@ update_scripts () {
     if [ -d $dir_scripts/.git ]; then
         git_pull_scripts $dir_scripts
     else
-        git_clone_scripts $url_scripts $dir_scripts "master"
+        git_clone_scripts $url_scripts $dir_scripts "main"
     fi
 
     if [[ $exit_status -eq 0 ]]; then
